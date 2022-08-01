@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from 'react';
+import {Grid} from 'semantic-ui-react';
+import Header from './components/Header/Header';
+import Gadget from './components/Gadget/Gadget';
+import Widget from './components/Widget/Widget';
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Fragment>
+            <Header/>
+            <Grid className='grid' >
+                <Grid.Column floated='left' width='8'>
+                    <div className='card-container'>
+                        <Gadget />
+                    </div>
+                </Grid.Column>
+                <Grid.Column floated='right' width='8'>
+                    <div className='card-container'>
+                        <Widget/>
+                    </div>
+                </Grid.Column>
+            </Grid>
+        </Fragment>
+    );
 }
 
 export default App;
